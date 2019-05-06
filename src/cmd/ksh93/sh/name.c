@@ -864,7 +864,7 @@ Namval_t *nv_create(const char *name, Dt_t *root, nvflag_t flags, Namfun_t *dp) 
 if(np==nv_refnode(np)){
 	/**
 	 ** DPRINTF("no progress\n");
-         **/
+	 **/
 	break;
 }
 #endif
