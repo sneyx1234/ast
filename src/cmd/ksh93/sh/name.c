@@ -860,6 +860,14 @@ Namval_t *nv_create(const char *name, Dt_t *root, nvflag_t flags, Namfun_t *dp) 
                         sub = nv_refsub(np);
                         shp->oldnp = nv_refoldnp(np);
                         if (shp->oldnp) shp->oldnp = shp->oldnp->nvenv;
+#ifdef BBI_SOL11_4
+if(np==nv_refnode(np)){
+	/**
+	 ** DPRINTF("no progress\n");
+         **/
+	break;
+}
+#endif
                         np = nv_refnode(np);
                         if (sub && c != '.') nv_putsub(np, sub, 0L, 0);
                         flags |= NV_NOSCOPE;
